@@ -8,6 +8,11 @@ app.use((req, res, next) => {
   next();
 });
 
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'My first server' });
 });
